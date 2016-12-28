@@ -14,6 +14,10 @@ Page({
       if(ele.id == e.markerId)
         mark = ele
     })
+    wx.navigateTo({
+      url:'../logs/logs?lat='+mark.latitude+'&lng='+mark.longitude+'&address='+mark.address+'&distance='+mark._distance
+    })
+    return
     wx.showModal({
   title: '厕所地址',
   content: mark.address+' ('+mark._distance.toFixed(0)+'m)',
